@@ -1,0 +1,29 @@
+{
+  "name": "gamut-styleguide",
+  "version": "1.0.0",
+  "description": "Gamut styleguide",
+  "main": "index.js",
+  "scripts": {
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build"
+  },
+  "author": "Jake Hiller",
+  "license": "ISC",
+  "devDependencies": {
+    "@codecademy/gamut": "latest",
+    "react-styleguidist": "^5.3.2",
+    "@codecademy/webpack-config": "0.6.0",
+    "babel-cli": "^6.6.5",
+    "babel-core": "^6.4.0",
+    "babel-eslint": "^6.1.2",
+    "babel-polyfill": "^6.7.4",
+    "babel-preset-codecademy": "^1.0.0",
+    "babel-register": "^6.7.2",
+    "node-sass": "^3.10.0",
+    "react": "15.3.2",
+    "react-dom": "15.3.2",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "webpack-merge": "^4.1.0"
+  }
+}

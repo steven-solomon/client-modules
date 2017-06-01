@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import cx from 'classnames';
 import s from './styles';
 
@@ -12,7 +12,7 @@ export const presetThemes = {
   lantern: 'darkmint'
 };
 
-class Button extends PureComponent {
+class Button extends Component {
   static displayName = 'Button';
   static propTypes = {
     theme: React.PropTypes.string.isRequired,

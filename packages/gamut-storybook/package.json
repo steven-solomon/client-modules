@@ -28,8 +28,7 @@
     "@codecademy/identity": "latest",
     "classnames": "^2.2.5",
     "invariant": "^2.2.0",
-    "lodash": "^3.10.1",
-    "webpack-merge": "^4.1.0"
+    "lodash": "^3.10.1"
   },
   "devDependencies": {
     "@codecademy/webpack-config": "0.6.0",
@@ -54,7 +53,8 @@
     "react-addons-test-utils": "15.x.x",
     "react-dom": "15.3.2",
     "sass-loader": "^4.0.2",
-    "style-loader": "^0.13.1"
+    "style-loader": "^0.13.1",
+    "webpack-merge": "^4.1.0"
   },
   "license": "MIT"
 }
