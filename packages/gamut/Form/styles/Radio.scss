@@ -1,0 +1,50 @@
+@import 'variables';
+
+.Radio {
+  @include no-select;
+  margin: 0.25rem 0;
+  width: 100%;
+  font-weight: normal;
+}
+
+.radioInput {
+  display: none;
+}
+
+.radioLabel {
+  display: flex;
+  padding: $form-padding;
+  border-radius: $border-radius;
+  border: 1px solid $swatches-grey-100;
+  align-items: center;
+  transition: $transition-time;
+  cursor: pointer;
+}
+
+.radioLabel::before {
+  content: '';
+  display: block;
+  width: px-rem(24px);
+  height: px-rem(24px);
+  min-width: px-rem(24px);
+  min-height: px-rem(24px);
+  border-radius: 100%;
+  border: 2px solid $swatches-grey-300;
+  margin-right: $form-padding;
+  transition: $transition-time;
+}
+
+.radioInput:checked + .radioLabel {
+  background-color: $swatches-grey-100;
+}
+
+.radioInput:checked + .radioLabel::before {
+  background-color: $color-mint;
+  border: 0.25rem solid $swatches-grey-100;
+  border-radius: 100%;
+  box-shadow: 0 0 0 2px $color-mint;
+  width: px-rem(24px);
+  height: px-rem(24px);
+  min-width: px-rem(24px);
+  min-height: px-rem(24px);
+}
