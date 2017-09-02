@@ -1,3 +1,3 @@
 module.exports = {
-  components: '../gamut/[A-Z]*/*.js'
+  components: './src/components/*.js'
 };

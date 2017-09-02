@@ -19,6 +19,9 @@
   "scripts": {
     "test": "jest"
   },
+  "workspaces": [
+    "packages/*"
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:RyzacInc/gamut.git"
