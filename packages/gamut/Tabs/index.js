@@ -13,7 +13,8 @@ export default class Tabs extends Component {
       })
     ).isRequired,
     onChange: PropTypes.func,
-    children: PropTypes.arrayOf(PropTypes.node).isRequired
+    children: PropTypes.arrayOf(PropTypes.node).isRequired,
+    renderAllChildren: PropTypes.bool
   };
 
   state = { activeTabId: undefined };
@@ -21,18 +22,20 @@ export default class Tabs extends Component {
   componentWillMount() {
     // for unique tab ids (in case there are multiple
     // tab widgets on the page)
-    this._idPrefix = Math.random().toString().replace('.', '');
+    this._idPrefix = Math.random()
+      .toString()
+      .replace('.', '');
   }
 
   createId(index) {
     return `${this._idPrefix}-${index}`;
   }
 
-  renderTabList = activeTabId => {
+  renderTabList = (activeTabId) => {
     // leftPercent determines where the animated underline should be positioned
     const leftPercent =
-      (this.props.config.findIndex((c, i) => this.createId(i) === activeTabId) /
-      this.props.config.length) *
+      this.props.config.findIndex((c, i) => this.createId(i) === activeTabId) /
+      this.props.config.length *
       100;
 
     return (
@@ -62,8 +65,9 @@ export default class Tabs extends Component {
     );
   };
 
-  renderTabPanels = activeTabId => {
+  renderTabPanels = (activeTabId) => {
     // render all tab panels, but only active tab panel contains anything
+    // unless prop renderAllChildren is true
     return (
       <div className={s.tabPanelContainer}>
         {this.props.config.map((c, i) => {
@@ -76,7 +80,11 @@ export default class Tabs extends Component {
               active={isActive}
               className={s.tabPanel}
             >
-              {isActive ? Children.toArray(this.props.children)[i] : <div />}
+              {isActive || this.props.renderAllChildren ? (
+                Children.toArray(this.props.children)[i]
+              ) : (
+                <div />
+              )}
             </TabPanel>
           );
         })}
@@ -107,7 +115,7 @@ export default class Tabs extends Component {
     );
   }
 
-  onChange = id => {
+  onChange = (id) => {
     if (this.props.onChange) this.props.onChange(id);
     this.setState(() => ({ activeTabId: id }));
   };
