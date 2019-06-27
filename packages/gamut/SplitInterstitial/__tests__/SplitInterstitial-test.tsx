@@ -3,7 +3,7 @@ import React from 'react';
 import SplitInterstitial from '..';
 
 describe('SplitInterstitial', () => {
-  it('renders left and right children in that order', () => {
+  it('renders right and left children in that order', () => {
     const left = <span>one</span>;
     const right = <span>two</span>;
 
