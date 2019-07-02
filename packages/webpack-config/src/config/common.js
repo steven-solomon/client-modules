@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
+// const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const loaders = require('../loaders');
 const ENV = require('../lib/env');
 
@@ -68,7 +68,7 @@ const commonConfig = (options = {}) => {
         devtoolModuleFilenameTemplate: '[absolute-resource-path]',
         devtoolFallbackModuleFilenameTemplate: '[resourcePath]?[hash]',
       },
-      plugins: [new CaseSensitivePathsPlugin()],
+      // plugins: [new CaseSensitivePathsPlugin()],
     });
   } else {
     config = merge.smart(config, {
