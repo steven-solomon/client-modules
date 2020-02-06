@@ -1,2 +1,2 @@
-export { default as Interstitial } from './Interstitial';
-export { default as SplitInterstitial } from './SplitInterstitial';
+export { Interstitial, InterstitialProps } from './Interstitial';
+export { SplitInterstitial, SplitInterstitialProps } from './SplitInterstitial';

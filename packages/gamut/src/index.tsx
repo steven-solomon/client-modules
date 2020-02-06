@@ -1,10 +1,10 @@
-export { default as Badge } from './Badge';
-export { default as Button } from './Button';
-export { default as ButtonBase } from './ButtonBase';
-export { default as Banner } from './Banner';
-export { default as CardShell } from './Card/CardShell';
-export { default as CardBody } from './Card/CardBody';
-export { default as CardFooter } from './Card/CardFooter';
+export { Badge, BadgeProps } from './Badge';
+export { Button, ButtonProps } from './Button';
+export { ButtonBase, ButtonBaseProps } from './ButtonBase';
+export { Banner, BannerProps } from './Banner';
+export { CardShell, CardShellProps } from './Card/CardShell';
+export { CardBody, CardBodyProps } from './Card/CardBody';
+export { CardFooter, CardFooterProps } from './Card/CardFooter';
 export {
   Form,
   FormGroup,
@@ -18,28 +18,39 @@ export {
   RadioGroup,
 } from './Form';
 export { LayoutGrid, Column } from './Layout';
-export { default as HighlightedText } from './HighlightedText';
-export { default as Icon } from './Icon';
-export { default as IkonaIcon } from './IkonaIcon';
-export { default as Logo } from './Logo';
-export { default as Markdown } from './Markdown';
-export { default as MenuItem } from './Menus/MenuItem';
-export { default as SideMenu } from './Menus/SideMenu';
-export { default as NotificationList } from './NotificationList';
+export { HighlightedText, HighlightedTextProps } from './HighlightedText';
+export { Icon, IconPropsDeprecated } from './Icon';
+export { IkonaIcon, IkonaIconProps } from './IkonaIcon';
+export { Logo, LogoProps } from './Logo';
+export { Markdown, MarkdownProps } from './Markdown';
+export { MenuItem, MenuItemProps } from './Menus/MenuItem';
+export { SideMenu, SideMenuProps } from './Menus/SideMenu';
+export { NotificationList, NotificationListProps } from './NotificationList';
 export {
-  default as NotificationIcon,
+  NotificationIcon,
+  NotificationIconProps,
 } from './NotificationList/NotificationIcon';
 export {
-  default as NotificationItem,
+  NotificationItem,
+  NotificationItemProps,
 } from './NotificationList/NotificationItem';
-export { default as RadialProgress } from './RadialProgress';
-export { default as Spinner } from './Spinner';
+export { RadialProgress, RadialProgressProps } from './RadialProgress';
+export { Spinner, SpinnerProps } from './Spinner';
 export { VisualTheme } from './theming/VisualTheme';
-export { Tabs, TabList, TabPanel, Tab } from './Tabs';
-export { default as Toggle } from './Toggle';
-export { default as ToolTip, ToolTipPosition } from './ToolTip';
-export { Grid, Col, Row } from './FlexGrid';
-export { Container, Item } from './FlexBox';
+export {
+  Tabs,
+  TabsProps,
+  TabList,
+  TabListProps,
+  TabPanel,
+  TabPanelProps,
+  Tab,
+  TabProps,
+} from './Tabs';
+export { Toggle, ToggleProps } from './Toggle';
+export { ToolTip, ToolTipProps, ToolTipPosition } from './ToolTip';
+export { Grid, GridProps, Col, ColProps, Row, RowProps } from './FlexGrid';
+export { Container, ContainerProps, Item } from './FlexBox';
 export { default as AccessibilityIcon } from './Icon/icons/AccessibilityIcon';
 export { default as AddIcon } from './Icon/icons/AddIcon';
 export { default as AdvisorIcon } from './Icon/icons/AdvisorIcon';

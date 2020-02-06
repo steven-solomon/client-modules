@@ -1,3 +1,3 @@
-export { default as Grid } from './Grid';
-export { default as Row } from './Row';
-export { default as Col } from './Col';
+export { Grid, GridProps } from './Grid';
+export { Row, RowProps } from './Row';
+export { Col, ColProps } from './Col';

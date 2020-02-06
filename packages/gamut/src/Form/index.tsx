@@ -1,10 +1,13 @@
-export { default as FormGroup } from './FormGroup';
-export { default as FormGroupLabel } from './FormGroupLabel';
-export { default as FormGroupDescription } from './FormGroupDescription';
-export { default as Checkbox } from './Checkbox';
-export { default as Select } from './Select';
-export { default as Input } from './Input';
-export { default as Form } from './Form';
-export { default as TextArea } from './TextArea';
-export { default as Radio } from './Radio';
-export { default as RadioGroup } from './RadioGroup';
+export { FormGroup, FormGroupProps } from './FormGroup';
+export { FormGroupLabel, FormGroupLabelProps } from './FormGroupLabel';
+export {
+  FormGroupDescription,
+  FormGroupDescriptionProps,
+} from './FormGroupDescription';
+export { Checkbox, CheckboxProps } from './Checkbox';
+export { Select, SelectProps } from './Select';
+export { Input, InputProps } from './Input';
+export { Form, FormProps } from './Form';
+export { TextArea, TextAreaProps } from './TextArea';
+export { Radio, RadioProps } from './Radio';
+export { RadioGroup, RadioGroupProps } from './RadioGroup';
