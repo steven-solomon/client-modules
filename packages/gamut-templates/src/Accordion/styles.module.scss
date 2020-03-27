@@ -1,0 +1,31 @@
+@import "~@codecademy/gamut-styles/utils";
+
+.tab {
+  width: 100%;
+  overflow: hidden;
+
+  .tabLabel {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+  }
+
+  .tabContent {
+    max-height: 0;
+    padding: 0 1em;
+    background: white;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .tabContentExpanded {
+    max-height: 100vh;
+    padding: 1em;
+  }
+
+  .tabClose {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+    font-size: 0.75em;
+  }
+}
