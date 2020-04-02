@@ -3,6 +3,7 @@ import omitProps from '../utils/omitProps';
 import style from './styles/index.module.scss';
 
 const propKeys = [
+  'as',
   'xs',
   'sm',
   'md',
@@ -13,7 +14,6 @@ const propKeys = [
   'lgOffset',
   'reverse',
   'className',
-  'tagName',
   'children',
 ];
 
@@ -65,7 +65,7 @@ export type ColSizing = {
 };
 
 export type ColProps = ColSizing & {
-  tagName?: string;
+  as?: string;
   className?: string;
   reverse?: boolean;
 };
@@ -74,7 +74,7 @@ export const Col: React.FC<ColProps> = props => {
   const className = getClassNames(props);
 
   return React.createElement(
-    props.tagName || 'div',
+    props.as || 'div',
     omitProps(propKeys, { ...props, className })
   );
 };

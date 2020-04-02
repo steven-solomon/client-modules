@@ -4,6 +4,7 @@ import omitProps from '../utils/omitProps';
 import style from './styles/index.module.scss';
 
 const propKeys = [
+  'as',
   'reverse',
   'start',
   'center',
@@ -16,7 +17,6 @@ const propKeys = [
   'first',
   'last',
   'className',
-  'tagName',
   'children',
 ];
 
@@ -53,6 +53,7 @@ const modificatorKeys = [
 type ModificatorType = 'xs' | 'sm' | 'md' | 'lg';
 
 export type RowProps = {
+  as?: string;
   around?: ModificatorType;
   between?: ModificatorType;
   bottom?: ModificatorType;
@@ -64,13 +65,12 @@ export type RowProps = {
   middle?: ModificatorType;
   reverse?: boolean;
   start?: ModificatorType;
-  tagName?: string;
   top?: ModificatorType;
 };
 
 export const Row: React.FC<RowProps> = props => {
   return React.createElement(
-    props.tagName || 'div',
+    props.as || 'div',
     omitProps(propKeys, { ...props, className: getClassNames(props) })
   );
 };

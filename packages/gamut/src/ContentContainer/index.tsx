@@ -5,7 +5,7 @@ import s from './styles.module.scss';
 
 export type ContentContainerProps = {
   className?: string;
-  el?: keyof ReactHTML;
+  as?: keyof ReactHTML;
   /** Toggle a containerWide className to be applied with no max-width and smaller padding */
   wide?: boolean;
 };
@@ -13,10 +13,10 @@ export type ContentContainerProps = {
 export const ContentContainer: React.FC<ContentContainerProps> = ({
   children,
   className,
-  el,
+  as,
   wide = false,
 }) => {
-  const Element = el || 'div';
+  const Element = as || 'div';
   const classes = cx(
     {
       [s.contentContainerWide]: wide,
