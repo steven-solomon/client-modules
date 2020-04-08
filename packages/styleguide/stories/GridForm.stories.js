@@ -1,12 +1,15 @@
 import React from 'react';
-import { GridForm } from '../../gamut-templates';
+import { GridForm } from '../../gamut-templates/src';
 
 import styles from './GridForm-story.scss';
+import { action } from '@storybook/addon-actions';
 
 export default {
   component: GridForm,
   title: 'Templates/GridForm',
 };
+
+const onSubmit = action('Submitting');
 
 export const gridForm = () => (
   <div className={styles.gridFormStory}>
@@ -99,8 +102,9 @@ export const gridForm = () => (
           type: 'checkbox',
         },
       ]}
-      onSubmit={async values => {
-        alert(`Submitted: ${JSON.stringify(values)}`);
+      onSubmit={values => {
+        console.log('Submitting values:', values);
+        onSubmit(values);
       }}
       submit={{
         contents: 'Submit Me!?',
