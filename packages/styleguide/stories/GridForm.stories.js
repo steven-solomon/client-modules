@@ -57,6 +57,27 @@ export const gridForm = () => (
           type: 'select',
         },
         {
+          label: 'File, whoa!!',
+          name: 'file-whoa',
+          size: 6,
+          type: 'file',
+          validation: {
+            required: true,
+            validate: files => {
+              const { type } = files.item(0);
+              const allowedTypes = [
+                'application/pdf',
+                'image/jpeg',
+                'image/png',
+              ];
+              if (!allowedTypes.includes(type))
+                return 'Please upload a pdf, jpeg, or png file.';
+
+              return true;
+            },
+          },
+        },
+        {
           label:
             "Validated, required text that must contain the word 'swag' twice",
           name: 'validated-required-text',
