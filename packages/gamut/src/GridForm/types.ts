@@ -19,6 +19,7 @@ export type GridFormCustomFieldProps = {
   className: string;
   field: GridFormCustomField;
   register: FormContextValues['register'];
+  label?: string;
 };
 
 export type GridFormCustomField = BaseFormField & {
