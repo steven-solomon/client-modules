@@ -1,5 +1,6 @@
 import { GridForm } from '@codecademy/gamut/src';
 import { action } from '@storybook/addon-actions';
+import { select } from '@storybook/addon-knobs';
 import React from 'react';
 
 import {
@@ -134,6 +135,12 @@ export const gridForm = () => (
       }}
       submit={{
         contents: 'Submit Me!?',
+        offset: select(
+          'Submit offset',
+          [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+          0
+        ),
+        size: select('Submit size', [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], 1),
       }}
     />
   </StoryTemplate>

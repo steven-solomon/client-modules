@@ -1,20 +1,29 @@
 import React from 'react';
 
 import { Button } from '../../Button';
-import { Column, ColumnSizes, ResponsiveProperty } from '../../Layout';
+import {
+  Column,
+  ColumnSizes,
+  ResponsiveProperty,
+  OptionalResponsiveProperty,
+  OffsetColumnSizes,
+} from '../../Layout';
+import styles from './styles.module.scss';
 
 export type GridFormSubmitProps = {
   contents: React.ReactNode;
+  offset?: OptionalResponsiveProperty<OffsetColumnSizes>;
   size?: ResponsiveProperty<ColumnSizes>;
 };
 
 export const GridFormSubmit: React.FC<GridFormSubmitProps> = ({
   contents,
+  offset,
   size,
 }) => {
   return (
-    <Column size={size}>
-      <Button theme="brand-purple" type="submit">
+    <Column offset={offset} size={size}>
+      <Button className={styles.button} theme="brand-purple" type="submit">
         {contents}
       </Button>
     </Column>
