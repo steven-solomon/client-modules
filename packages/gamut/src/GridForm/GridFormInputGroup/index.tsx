@@ -5,6 +5,7 @@ import { FormError, FormGroup, FormGroupLabel } from '../../Form';
 import { Column } from '../../Layout';
 import { GridFormField } from '../types';
 import GridFormCheckboxInput from './GridFormCheckboxInput';
+import GridFormCustomInput from './GridFormCustomInput';
 import GridFormFileInput from './GridFormFileInput';
 import GridFormTextInput from './GridFormTextInput';
 import GridFormSelectInput from './GridFormSelectInput';
@@ -23,6 +24,15 @@ export const GridFormInputGroup: React.FC<GridFormInputGroupProps> = props => {
       case 'checkbox':
         return (
           <GridFormCheckboxInput
+            className={styles.gridFormInput}
+            field={props.field}
+            register={props.register}
+          />
+        );
+
+      case 'custom':
+        return (
+          <GridFormCustomInput
             className={styles.gridFormInput}
             field={props.field}
             register={props.register}

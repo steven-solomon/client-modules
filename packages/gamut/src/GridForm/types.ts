@@ -1,4 +1,4 @@
-import { ValidationOptions } from 'react-hook-form';
+import { FormContextValues, ValidationOptions } from 'react-hook-form';
 
 import { ColumnSizes, ResponsiveProperty } from '../Layout';
 
@@ -13,6 +13,18 @@ export type GridFormCheckboxField = BaseFormField & {
   label?: string;
   validation?: Pick<ValidationOptions, 'required'>;
   type: 'checkbox';
+};
+
+export type GridFormCustomFieldProps = {
+  className: string;
+  field: GridFormCustomField;
+  register: FormContextValues['register'];
+};
+
+export type GridFormCustomField = BaseFormField & {
+  render: React.FC<GridFormCustomFieldProps>;
+  validation?: Pick<ValidationOptions, 'required'>;
+  type: 'custom';
 };
 
 export type GridFormTextField = BaseFormField & {
@@ -46,6 +58,7 @@ export type GridFormTextAreaField = BaseFormField & {
 
 export type GridFormField =
   | GridFormCheckboxField
+  | GridFormCustomField
   | GridFormTextField
   | GridFormSelectField
   | GridFormFileField
