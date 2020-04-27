@@ -1,7 +1,6 @@
+import React from 'react';
 import { InputStepper } from '@codecademy/gamut/src';
 import { number, text } from '@storybook/addon-knobs';
-import React from 'react';
-
 import {
   decoratedStories,
   decoratedStory,

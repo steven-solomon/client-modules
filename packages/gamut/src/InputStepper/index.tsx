@@ -8,15 +8,31 @@ export type InputStepperButtonTargets =
   | 'decrease_selection';
 
 export type InputStepperProps = {
+  /** the label to show beneath the numeric value */
   label: string;
+
+  /** the value to assign the numeric field */
   value: number;
+
+  /** the maximum value allowed */
   max?: number;
+
+  /** the minimum value allowed */
   min?: number;
+
+  /** what action to perform when the value of this field has changed */
   onChange: (val: number) => void;
+
+  /**
+   * the label to use for accessibility purposes; will be read on the
+   * input field itself, as well as the stepper buttons
+   */
   ariaLabel: string;
+
+  /** the tracking to run when the step buttons are clicked */
   onTrackButtonClick?: (target: InputStepperButtonTargets) => void;
 
-  // cusotmization options
+  /** any additional styling that should be applied to the stepper */
   className?: string;
 };
 
@@ -26,7 +42,7 @@ export type InputStepperProps = {
 export const InputStepper: React.FC<InputStepperProps> = ({
   label,
   value,
-  max,
+  max = 999,
   min = 0,
   onChange,
   ariaLabel,
@@ -74,19 +90,21 @@ export const InputStepper: React.FC<InputStepperProps> = ({
   const inputId = 'inputStepper';
   const labelId = 'inputStepperLabel';
 
+  // calculate the input class to use based off of the max
+  // provided by the user
+  let inputStyle = styles.standardWidth;
+  if (max < 10) {
+    inputStyle = styles.mini;
+  } else if (max > 99) {
+    inputStyle = styles.long;
+  }
+
   return (
     <div className={className ? cx(styles.stepper, className) : styles.stepper}>
       <div className={styles.column}>
         {/** render the actual input field */}
         <input
-          className={cx(
-            styles.input,
-            max < 10
-              ? styles.mini
-              : max < 100
-              ? styles.standardWidth
-              : styles.long
-          )}
+          className={cx(styles.input, inputStyle)}
           type="number"
           max={max}
           min={min}
