@@ -1,0 +1,56 @@
+@import "~styles/cc";
+
+.stepper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: $font-family-base;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  & + .column {
+    margin-left: 0.7rem;
+  }
+}
+
+.input {
+  border: 2px solid $color-gray-200;
+  border-radius: 4px;
+  outline: none;
+  font-size: 1.65rem;
+  padding: 0.2rem 1.5rem 1rem;
+  text-align: center;
+  font-family: $font-family-headings;
+
+  /* don't show the default input spinner */
+  &[type="number"]::-webkit-inner-spin-button,
+  &[type="number"]::-webkit-outer-spin-button {
+    /* stylelint-disable-next-line */
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &[type="number"] {
+    /* stylelint-disable-next-line */
+    -moz-appearance: textfield;
+  }
+
+  &.mini {
+    max-width: 6rem;
+  }
+
+  &.standard {
+    max-width: 20rem;
+  }
+}
+
+.label {
+  margin-top: -1.8rem;
+  text-align: center;
+  font-size: 0.9rem;
+  font-family: $font-family-base;
+}
