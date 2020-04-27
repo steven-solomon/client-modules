@@ -7,7 +7,7 @@ export type InputStepperButtonTargets =
   | 'increase_selection'
   | 'decrease_selection';
 
-export interface InputStepperProps {
+export type InputStepperProps = {
   label: string;
   value: number;
   max?: number;
@@ -18,12 +18,12 @@ export interface InputStepperProps {
 
   // cusotmization options
   className?: string;
-}
+};
 
 /**
  * renders a numeric step input with an embedded label and a custom set of step buttons
  */
-const InputStepper: React.FC<InputStepperProps> = ({
+export const InputStepper: React.FC<InputStepperProps> = ({
   label,
   value,
   max,
@@ -57,7 +57,7 @@ const InputStepper: React.FC<InputStepperProps> = ({
 
   // handle normalizing and parsing on input change
   const onChangeEvent = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const rawValue = event.target.value;
+    const rawValue = event.target.value || `${min}`;
     const normalizedValue = normalize(parseInt(rawValue));
     if (normalizedValue === value) {
       return;
@@ -81,7 +81,11 @@ const InputStepper: React.FC<InputStepperProps> = ({
         <input
           className={cx(
             styles.input,
-            max < 10 ? styles.mini : styles.standardWidth
+            max < 10
+              ? styles.mini
+              : max < 100
+              ? styles.standardWidth
+              : styles.long
           )}
           type="number"
           max={max}

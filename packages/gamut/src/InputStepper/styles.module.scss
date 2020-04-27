@@ -1,4 +1,4 @@
-@import "~styles/cc";
+@import "~@codecademy/gamut-styles/utils";
 
 .stepper {
   display: flex;
@@ -40,11 +40,15 @@
   }
 
   &.mini {
-    max-width: 6rem;
+    max-width: 4.5rem;
   }
 
-  &.standard {
-    max-width: 20rem;
+  &.standardWidth {
+    max-width: 5rem;
+  }
+
+  &.long {
+    max-width: 8rem;
   }
 }
 

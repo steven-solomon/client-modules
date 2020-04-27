@@ -1,9 +1,10 @@
 import React from 'react';
+
 import {
   ArrowChevronUpIcon,
   ArrowChevronDownIcon,
 } from '@codecademy/gamut-icons';
-import { Button } from '@codecademy/gamut';
+import { Button } from '../../Button';
 import styles from './styles.module.scss';
 
 export interface StepButtonProps {
