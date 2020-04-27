@@ -40,7 +40,7 @@ const changeValue = (value: number, wrapper: ReactWrapper) => {
   return fieldAfter;
 };
 
-describe('<Stepper>', () => {
+describe('InputStepper', () => {
   it('handles initially out of bounds data', () => {
     const wrapper = renderStepper({ min: 2, max: 4, value: 6 });
     const field = wrapper.find('input');
