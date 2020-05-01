@@ -115,7 +115,7 @@ export const InputStepper: React.FC<InputStepperProps> = ({
           aria-labelledby={`${labelId} ${inputId}`}
           aria-label={`current value of ${value}`}
           onChange={onChangeEvent}
-        ></input>
+        />
 
         {/* render the label for the input field */}
         <label
